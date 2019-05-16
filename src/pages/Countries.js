@@ -3,7 +3,7 @@ import countries from '../data/countries.json'
 import { Link } from 'react-router-dom';
 
 class Countries extends Component {
-  
+
 
  
   render() {
@@ -15,7 +15,6 @@ class Countries extends Component {
         </h1>
         <div>
           {countries.map((country, index) => {
-
             return (
               <div key ={index} className="country">
                 <p>
@@ -25,7 +24,6 @@ class Countries extends Component {
                 {country.name.common}
                 </Link></p>
               </div>
-
             )
             
           })}
