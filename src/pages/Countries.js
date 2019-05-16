@@ -9,7 +9,7 @@ class Countries extends Component {
   render() {
 
     return (
-      <div>
+      <div class="countries-container">
         <h1>
           Countries
         </h1>

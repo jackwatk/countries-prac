@@ -8,6 +8,14 @@ class Detail extends Component {
   }
 
 
+  getCountry = () => {
+    const id = this.props.match.params.id;
+    const country = countries.filter((country => country.cca3 === id))[0]
+    this.setState({
+      country,
+    })
+  }
+
   componentDidMount(){
     // a funtion that takes the cca3 from props and returns its country from the list
     this.getCountry();
@@ -25,23 +33,14 @@ class Detail extends Component {
     
   }
 
-  getCountry = () => {
-    const id = this.props.match.params.id;
-    const country = countries.filter((country =>
-      country.cca3 === id
-    ))
-    this.setState({
-      country: country[0],
-    })
-  }
 
   render() {
     const {country} = this.state
 
     return (
-      <div>
+      <div className="country-details">
         <h3>{country.name && country.name['common']}{country.flag}</h3>
-        <h5>{country.capital}</h5>
+        <h5>Capital: {country.capital}</h5>
         <Borders country={country} />
       </div>
     );

@@ -17,8 +17,8 @@ class Borders extends Component {
     }
   }
     getCountryName = (code) => {
-        let country = countries.filter((country => country.cca3 === code))
-        return <p>{country[0].name.common}</p>
+        let country = countries.filter((country => country.cca3 === code))[0]
+        return <p>{country.name.common}{country.flag}</p>
     }  
     
     
